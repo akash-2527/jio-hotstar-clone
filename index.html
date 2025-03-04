@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotstar</title>
+    <link rel="shortcut icon" href="images/favicon.webp" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        scrollbar-width:none;
+    }
+
+    .section{
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .nav{
+        width: 7vw;
+        height: 100vh;
+        background-color: black;
+        position: fixed;
+        top: 0;
+        left: 0;
+        border-right:1px solid lightgoldenrodyellow ;
+    }
+
+    .sec-main{
+
+        width: 93vw;
+        min-height: 100vh;
+        background-color: black;
+        float: right;
+    }
+
+    .top-logo{
+        width: 90%;
+        margin: auto;
+        margin-bottom: 40px;
+        margin-top: 30px;
+    }
+
+    .logo{
+        width: 100%;
+        cursor: pointer;
+    }
+
+    .profile{
+        width: 30%;
+    }
+    .profileimg{
+        width: 100%;
+        cursor: pointer;
+    }
+    .white{
+        color: rgb(149, 149, 149);
+        font-size: 18px;
+        /* font-weight: 400; */
+        transition: 0.1s all ease;
+        cursor: pointer;
+        margin-bottom: 10px;
+    }
+    .white1{
+        font-size: 20px ;
+        color: rgb(149, 149, 149);
+        cursor: pointer;
+        margin-bottom: 10px;
+    }
+
+
+    .white:hover{
+        color: white;
+        font-size: 20px ;
+    }
+    .white1:hover{
+        color: white;
+        font-size: 22px ;
+    }
+
+    .sec1-1{
+        width: 80%;
+        /* background-color: antiquewhite; */
+        /* margin: auto; */
+        margin-top: 20px;
+    }
+
+    .sec1-1img{
+        width: 50%;
+        border-radius: 20px;
+        margin-right:15px ;
+    }
+    .oneimg{
+        width: 100%;
+        border-radius: 20px;
+    }
+    .headinglogo{
+        width: 50px;
+        margin-right:7px ;
+    }
+    .headinglogoimg{
+        width: 100%;
+        border-radius: 7px;
+    }
+
+    .sec1-content{
+        margin-top: 40px;
+    }
+    .sec1-heading-content{
+        color: white;
+
+    }
+    .heading-content{
+        font-weight: 700;
+        color: white;
+    }
+    .sec1-heading-caption{
+        margin-top: 10px;
+        font-size: 18px;
+        color: white;
+        /* font-weight: 300; */
+    }
+    .sec1-heading-caption button{
+        width: 200px;
+        font-weight: 700;
+        margin-top: 10px;
+        font-size: 19px;
+        padding: 9px;
+    }
+
+    .sec2{
+        width: 100%;
+        margin: auto;
+        margin-top: 30px;
+       
+    }
+
+    .sec2-1video{
+        width: 100%;
+        border-radius: 20px;
+    }
+    .sec2-video{
+        width: 100%;
+        position: sticky;
+        top: 15px;
+
+    }
+    .sec2-2{
+        width: 100%;
+        position: relative;
+        bottom: 400px;
+        /* left: 15px; */
+        background: linear-gradient(to bottom, transparent, black, black);
+    }
+    .p2{
+        font-weight: 700;
+        font-size: 20px;
+    }
+    .sec2-caption-button{
+        width: 300px;
+        color: white;
+        background: linear-gradient(to right, #007BFF, #E60073);
+        transition: 0.2s all ease;
+        padding: 10px;
+        border: none;
+    }
+
+    .boxes1{
+        width: 100%;
+        overflow: scroll;
+        
+
+    }
+    
+    .box{
+        min-width: 150px;
+        margin: 10px;
+    }
+    .box1{
+        min-width: 200px;
+        margin: 10px;
+    }
+    .box3{
+        min-width: 200px;
+        margin: 10px;
+        padding: 15px;
+    }
+
+    .box3-heading{
+        color: white;
+        text-shadow: 0 0 10px black;
+        font-size: 90px;
+        font-weight: 700;
+        position: relative;
+        bottom: 130px;
+        right: 15px;   
+    }
+    .boximg{
+        width: 100%;
+        cursor: pointer;
+        transition: 0.4s all ease;
+        border-radius: 10px;
+    }
+    
+    .boximg:hover{
+        transform: scale(1.04);
+    }
+
+    .matches{
+        max-width: 100px;
+    }
+
+    .matchesimg{
+        width: 100%;
+    }
+
+    /* footer */
+    footer {
+  background-color: #0d0d0d;
+  color: #b3b3b3;
+  padding: 30px 50px;
+  font-family: Arial, sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #333;
+  padding-bottom: 20px;
+}
+
+.footer-column {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-column h4 {
+  color: #fff;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.footer-column a {
+  display: block;
+  color: #b3b3b3;
+  font-size: 14px;
+  text-decoration: none;
+  margin-bottom: 5px;
+}
+
+.footer-column a:hover {
+  color: #fff;
+}
+
+.footer-column p {
+  font-size: 14px;
+  color: #b3b3b3;
+}
+
+.social-icons {
+  display: flex;
+  gap: 10px;
+  margin-top: 5px;
+}
+
+.social-icons img {
+  width: 20px;
+  height: 20px;
+}
+
+.app-links {
+  margin-top: 10px;
+}
+
+.app-links img {
+  width: 120px;
+  margin-right: 10px;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.footer-bottom a {
+  color: #b3b3b3;
+  margin-left: 10px;
+  text-decoration: none;
+}
+
+.footer-bottom a:hover {
+  color: #fff;
+}
+
+.firstbox{
+    width: 400px;
+    overflow: scroll;
+    padding: 5px;
+}
+.firstimg{
+    min-width: 100px;
+    margin: 5px;
+}
+
+.imgrr{
+    width: 100%;
+    opacity: 0.5;
+    cursor: pointer;
+    transition: 0.4s all ease;
+
+}
+.imgrr:hover{
+    opacity: 1;
+    transform: scale(1.04);
+}
+
+   
+    
+
+
+
+</style>
+<body>
+<div class="section">
+    <div class="nav d-flex justify-content-start align-items-center flex-column gap-4">
+
+        <div class="top-logo container">
+            <img src="images/logo.png" class="logo">
+        </div>
+
+        <i class="fa-solid fa-house white"></i>
+        <i class="fa-solid fa-magnifying-glass white"></i>
+        <i class="fa-solid fa-tv white"></i>
+        <i class="fa-solid fa-clapperboard white"></i>
+        <i class="fa-solid fa-person-running white1 "></i>
+        <i class="fa-solid fa-video white"></i>
+        <i class="fa-solid fa-table-list white"></i>
+        <div class="profile">
+            <img src="images/profile.png" class="profileimg">
+        </div>
+
+    </div>
+
+    <div class="sec-main">
+
+        <div class="sec1-1 container d-flex">
+            <div class="sec1-1img">
+                <img src="images/sec1.png" class="oneimg">
+            </div>
+            <div class="sec1-content d-flex flex-column">
+                <div class="sec1-heading d-flex">
+                    <div class="headinglogo">
+                        <img src="images/favicon.webp" class="headinglogoimg">
+                     </div>
+                     <div class="sec1-heading-content">
+                        <p class="m-0 heading-content">Daredevil</p>
+                        <p class="m-0">Streaming From March 5</p>
+                     </div>
+                </div>
+                <div class="sec1-heading-caption">
+                    <p class="m-0">Daredevil's secret life is on the line in this gripping</p>
+                    <p class="m-0">superhero drama !</p>
+                    <button class="btn btn-secondary">Trailer</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="sec2 container">
+            <div class="sec2-video">
+                <video src="images/video.mp4" autoplay muted class="sec2-1video"></video>
+            </div>
+            <div class="sec2-2 conyainer-fluid">
+                <div class="sec2-heading mx-3">
+                    <img src="images/love-under.avif" alt="">
+                </div>
+                <div class="sec2-caption text-white mx-3">
+                    <h6 class="text-primary m-0 mt-3">NEW RELEASE</h6>
+                    <p class="m-0 mt-2 mb-4">2025  U/A 13+  1 Season  7 languages</p>
+                    <p class="m-0 my-3 p2">Romance | Comedy</p>
+                    <p class="m-0">Vinod is ready to build his dream house. But is he </p> 
+                    <p class="m-0 mb-4">ready to face the hurdles in his path ?</p>
+                    <div class="div d-flex container-fluid justify-content-between align-items-center">
+                            <button class="btn  sec2-caption-button"><i class="fa-solid fa-play"></i> Play</button>
+
+                            <div class="firstbox d-flex">
+                                    <div class="firstimg">
+                                        <img src="images/tukra.png" class="imgrr">
+                                    </div>
+                                    <div class="firstimg">
+                                        <img src="images/eyes.png" class="imgrr">
+                                    </div>
+                                    <div class="firstimg">
+                                        <img src="images/love.png" class="imgrr">
+                                    </div>
+                                    <div class="firstimg">
+                                        <img src="images/lock.png" class="imgrr">
+                                    </div>
+                                    <div class="firstimg">
+                                        <img src="images/hp.png" class="imgrr">
+                                    </div>
+                                    <div class="firstimg">
+                                        <img src="images/ind.png" class="imgrr">
+                                    </div>
+                            </div>
+                    </div>
+                </div>
+
+                <h1 class="m-0 mt-5 mx-3 text-white mmm">Top 10 Movies</h1>
+                
+                <div class="boxes1  d-flex mx-3">
+                    <div class="box3 boximg">
+                        <img src="images/topsalaar.png" class="boximg">
+                        <h1 class="box3-heading">1</h1>
+                    </div>
+                    <div class="box3 boximg">
+                        <img src="images/topmsd.png" class="boximg">
+                        <h1 class="box3-heading">2</h1>
+                    </div>
+                    <div class="box3 boximg">
+                        <img src="images/toptukra.png" class="boximg">
+                        <h1 class="box3-heading">3</h1>
+                    </div>
+                    <div class="box3 boximg">
+                        <img src="images/avesham.png" class="boximg">
+                        <h1 class="box3-heading">4</h1>
+                    </div>
+                    <div class="box3 boximg">
+                        <img src="images/prem.png" class="boximg">
+                        <h1 class="box3-heading">5</h1>
+                    </div>
+                    <div class="box3 boximg">
+                        <img src="images/manju.png" class="boximg">
+                        <h1 class="box3-heading">6</h1>
+                    </div>
+                    <div class="box3 boximg">
+                        <img src="images/lubber.png" class="boximg">
+                        <h1 class="box3-heading">7</h1>
+                    </div>
+                    <div class="box3 boximg">
+                        <img src="images/zara.png" class="boximg">
+                        <h1 class="box3-heading">8</h1>
+                    </div>
+                    <div class="box3 boximg">
+                        <img src="images/12th.png" class="boximg">
+                        <h1 class="box3-heading">9</h1>
+                    </div>
+                    <div class="box3 boximg">
+                        <img src="images/sarf.png" class="boximg">
+                        <h1 class="box3-heading">10</h1>
+                    </div>
+                </div>
+
+
+                <h1 class="m-0 mx-3 text-white">Latest Releases</h1>
+                <div class="boxes1 d-flex mx-3">
+                    <div class="box">
+                        <img src="images/inside.png" class="boximg">
+                    </div>
+                    <div class="box">
+                        <img src="images/dil.png" class="boximg">
+                    </div>
+                    <div class="box">
+                        <img src="images/loveuc.avif" class="boximg">
+                    </div>
+                    <div class="box">
+                        <img src="images/suits.png" class="boximg">
+                    </div>
+                    <div class="box">
+                        <img src="images/oscar.png" class="boximg">
+                    </div>
+                    <div class="box">
+                        <img src="images/kaush.png" class="boximg">
+                    </div>
+                    <div class="box">
+                        <img src="images/oops.png" class="boximg">
+                    </div>
+                    <div class="box">
+                        <img src="images/wild.png" class="boximg">
+                    </div>
+                    <div class="box">
+                        <img src="images/7days.png" class="boximg">
+                    </div>
+                    <div class="box">
+                        <img src="images/game.png" class="boximg">
+                    </div>
+
+                </div>
+                <h1 class="m-0 mt-4 mx-3 text-white">Non-Stop-Sports</h1>
+
+                <div class="boxes1 d-flex mx-3 my-3">
+                    <div class="box1">
+                        <img src="images/coind.png" class="boximg">
+                    </div>
+                    <div class="box1">
+                        <img src="images/aus.png" class="boximg">
+                    </div>
+                    <div class="box1">
+                        <img src="images/csk.png" class="boximg">
+                    </div>
+                    <div class="box1">
+                        <img src="images/hp.png" class="boximg">
+                    </div>
+                    <div class="box1">
+                        <img src="images/vk.png" class="boximg">
+                    </div>
+                    <div class="box1">
+                        <img src="images/varun.png" class="boximg">
+                    </div>
+                    <div class="box1">
+                        <img src="images/sa.png" class="boximg">
+                    </div>
+                </div>
+
+                <h1 class="m-0 mt-4 mx-3 text-white">Popular Languages</h1>
+                <div class="boxes1 d-flex mx-3 my-3">
+                    <div class="box1">
+                        <img src="images/english.png" class="boximg">
+                    </div>
+                    <div class="box1">
+                        <img src="images/telugu.png" class="boximg">
+                    </div>
+                    <div class="box1">
+                        <img src="images/hindi.png" class="boximg">
+                    </div>
+                    <div class="box1">
+                        <img src="images/tamilz.png" class="boximg">
+                    </div>
+                    <div class="box1">
+                        <img src="images/kannada.png" class="boximg">
+                    </div>
+                    <div class="box1">
+                        <img src="images/malaya.png" class="boximg">
+                    </div>
+                    <div class="box1">
+                        <img src="images/japan.png" class="boximg">
+                    </div>
+                    <div class="box1">
+                        <img src="images/korea.png" class="boximg">
+                    </div>
+                    <div class="box1">
+                        <img src="images/marati.png" class="boximg">
+                    </div>
+                </div>
+
+                <h1 class="m-0 mt-4 mx-3 text-white">Popular Genres</h1>
+                <div class="boxes1 d-flex mx-3 my-3">
+                    <div class="box1">
+                        <img src="images/romance.png" class="boximg">
+                    </div>
+                    <div class="box1">
+                        <img src="images/action.png" class="boximg">
+                    </div>
+                    <div class="box1">
+                        <img src="images/drama.png" class="boximg">
+                    </div>
+                    <div class="box1">
+                        <img src="images/horror.png" class="boximg">
+                    </div>
+                    <div class="box1">
+                        <img src="images/sifi.png" class="boximg">
+                    </div>
+                    <div class="box1">
+                        <img src="images/comedy.png" class="boximg">
+                    </div>
+                    <div class="box1">
+                        <img src="images/history.png" class="boximg">
+                    </div>
+                    <div class="box1">
+                        <img src="images/familyz.png" class="boximg">
+                    </div>
+                </div>
+
+
+                <footer>
+                    <div class="footer-container">
+                      <div class="footer-column">
+                        <h4>Company</h4>
+                        <a href="#">About Us</a>
+                        <a href="#">Careers</a>
+                      </div>
+                  
+                      <div class="footer-column">
+                        <h4>View Website in</h4>
+                        <p>✔ English</p>
+                      </div>
+                  
+                      <div class="footer-column">
+                        <h4>Need Help?</h4>
+                        <a href="#">Visit Help Center</a>
+                        <a href="#">Share Feedback</a>
+                      </div>
+                  
+                      <div class="footer-column">
+                        <h4>Connect with Us</h4>
+                        <div class="social-icons">
+                          <a href="#"><img src="images/facebooklogo.jpg" alt="Facebook"></a>
+                          <a href="#"><img src="images/xlogo.avif" alt="Twitter"></a>
+                        </div>
+                        <div class="app-links">
+                          <a href="#"><img src="images/gstore.webp" alt="Google Play"></a>
+                          <a href="#"><img src="images/istore.webp" alt="App Store"></a>
+                        </div>
+                      </div>
+                    </div>
+                  
+                    <div class="footer-bottom">
+                      <p>© 2025 STAR. All Rights Reserved.</p>
+                      <a href="#">Terms Of Use</a>
+                      <a href="#">Privacy Policy</a>
+                      <a href="#">FAQ</a>
+                    </div>
+                  </footer>
+                  
+                  
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
